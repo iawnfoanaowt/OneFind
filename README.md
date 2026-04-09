@@ -2,11 +2,11 @@
 
 ## 版本更新
 
-- 版本号：`1.0.2026.40922`
+- 版本号：`v1.1.2026.9903`
 - 发布日期：`2026-04-09`
 - 当前版本简要：支持 `Obsidian`、`Zotero`，并新增 `EndNote` 安装入口与授权流程界面
-- 发布说明：[docs/releases/v1.0.2026.40922.md](docs/releases/v1.0.2026.40922.md)
-- 下载地址：[GitHub Releases](https://github.com/iawnfoanaowt/Knowledge-Base-Gateway/releases/tag/v1.0.2026.40922)
+- 发布说明：[docs/releases/v1.1.2026.9903.md](docs/releases/v1.1.2026.9903.md)
+- 下载地址：[GitHub Releases](https://github.com/iawnfoanaowt/Knowledge-Base-Gateway/releases)
 
 ## 安装说明
 
