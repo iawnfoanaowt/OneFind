@@ -2,9 +2,9 @@
 
 ## 版本更新
 
-- 版本号：1.1.2026.9903
+- 版本号：v1.1.2026.9903
 - 发布日期：2026-04-10
-- 当前版本简要：支持 Obsidian、Zotero、EndNote 三类本地知识源接入，提供 ast 与 deep 两种模式
+- 当前版本简要：支持 Obsidian、Zotero、EndNote 三类本地知识源接入，提供 fast 与 deep 两种模式
 - 发布说明：[docs/releases/v1.1.2026.9903.md](docs/releases/v1.1.2026.9903.md)
 - 下载地址：[GitHub Releases](https://github.com/iawnfoanaowt/Knowledge-Base-Gateway/releases)
 - 视频介绍：[【Codex 神器！把 Obsidian、Zotero、EndNote 统一集成为本地科研知识库】](https://www.bilibili.com/video/BV13CDtBsEcg/?share_source=copy_web&vd_source=31d7ef23294e8878d5a5a9aa3c5763ff)
