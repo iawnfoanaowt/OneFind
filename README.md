@@ -1,4 +1,5 @@
 # Knowledge Base Gateway
+Knowledge Base Gateway 是一款面向 ChatGPT Codex 的知识接入插件，可将 EndNote、Zotero与Obsidian中积累的文献、PDF和笔记快速接入 AI 工作流，帮助用户在毕业论文、科研论文、文献综述、文献阅读以及基金项目书撰写等场景中，实现一键安装、快速检索与智能问答，解决“文献太多、笔记零散、用时难找、记不起来、难以串联”等常见问题
 
 ## 下载链接
 
