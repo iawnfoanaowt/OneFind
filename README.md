@@ -4,7 +4,7 @@
 
 ## 下载
 
-- Release 页面：[Knowledge-Base-Gateway Releases](https://github.com/iawnfoanaowt/Knowledge-Base-Gateway/releases)
+- 下载地址：[Knowledge-Base-Gateway Releases](https://github.com/iawnfoanaowt/Knowledge-Base-Gateway/releases)
 - 视频介绍：[【写论文神器】AI 自动处理文献，一个工具打通 EndNote、Zotero、Obsidian](https://www.bilibili.com/video/BV13CDtBsEcg/?share_source=copy_web&vd_source=31d7ef23294e8878d5a5a9aa3c5763ff)
 
 ## 界面示意
