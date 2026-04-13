@@ -265,7 +265,7 @@
 建议操作顺序：
 
 1. 先关闭 `Codex`
-2. 关闭仍在运行的 `Knowledge Base Gateway` 相关窗口或服务
+2. 关闭仍在运行的 `OneFind` 相关窗口或服务
 3. 进入 `kb_gateway` 安装目录
 4. 双击运行 `OneFindUninstall.exe`
 5. 按界面提示完成卸载
@@ -313,7 +313,7 @@
 
 这意味着：
 
-- 这里授权的是 `Knowledge Base Gateway` 的 `EndNote 数据访问功能`
+- 这里授权的是 `OneFind` 的 `EndNote 数据访问功能`
 - 不是 `EndNote` 软件本身
 - 即使配置了 `.enl` 路径，只要本机没有有效授权 JSON，程序也不会访问 `EndNote`
 - 没有授权、授权过期、机器码不匹配、签名无效或时间回拨异常，都会导致 `EndNote` 被禁用
