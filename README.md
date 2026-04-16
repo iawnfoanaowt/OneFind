@@ -315,10 +315,6 @@ OneFind 是一个供 ChatGPT Codex 调用的本地知识库插件，让你可以
 
 ---
 
-## 📧 联系方式
-
-- 邮箱：zhtaogis@163.com
-
 ---
 
 ## 📄 License
