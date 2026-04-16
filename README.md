@@ -1,8 +1,9 @@
 # OneFind
 
-`OneFind` （中文名：知寻）是一款供 `ChatGPT Codex` 调用的本地知识库插件，可将 `EndNote`、`Zotero` 与 `Obsidian` 中积累的文献、PDF 和笔记快速接入 AI 工作流，帮助用户在毕业论文、科研论文、文献综述、文献阅读以及基金和项目书撰写中，实现一键安装、快速检索与 AI 辅助回答，解决“文献太多、笔记太散、真正要用时却找不到、想不起、串不起来”的常见痛点。
+> 明明看过，却想不起来？  
+> **OneFind 让你的本地知识随时可用**，帮助用户在毕业论文、科研论文、文献综述、文献阅读以及基金和项目书撰写中，实现一键安装、快速检索与 AI 辅助回答，解决“文献太多、笔记太散、真正要用时却找不到、想不起、串不起来”的常见痛点。
 
-说明：插件名称Knowledge Base Gateway修改为OneFind（中文名：知寻），并在下一版本1.5 开始使用，感谢社群各位小伙伴取名的建议
+---
 
 ## 下载
 
@@ -12,344 +13,314 @@
   
 ![公众号：OneFind](https://github.com/user-attachments/assets/9488ebce-b03e-4c64-ad3b-a9c542b92601)
 
-## 界面示意
+## 🚀 OneFind 是什么
 
-### 1. 安装器界面
-![安装器界面](docs/screenshots/installer-ui.png)
+OneFind 是一个供 ChatGPT Codex 调用的本地知识库插件，让你可以：
 
-### 2. 在 Codex 中调用技能
-![Codex 技能入口](docs/screenshots/codex-skill-entry.png)
+- 🔍 一个入口搜索：EndNote/Zotero/Obsidian/Notion/Mendeley Reference Manager/Citavi7/文件夹 （七大主流平台）
+- 💬 用自然语言提问，而不是只搜关键词
+- 📚 基于本地知识库回答（避免 AI 幻觉）
+- ⚡ 自动建立索引，越用越快
+- 🌐 本地不够，还能联网补充
 
-### 3. deep 检测与索引初始化
-![deep 检测与索引初始化](docs/screenshots/deep-check-and-index-init.png)
+👉 本质：**让你的知识，从“存着”变成“随时可用”**
 
-### 4. 普通模式问答示例
-![普通模式问答示例](docs/screenshots/answer-example.png)
+---
 
-### 5. deep 模式分析示例
-![deep 模式分析示例](docs/screenshots/deep-analysis-example.png)
+## 📸 功能演示
 
+### 统一搜索所有知识源
+![](https://fastly.jsdelivr.net/gh/bucketio/img1@main/2026/04/16/1776322224610-f069fd40-0e94-4fcf-97a2-6237ddcb06a6.png)
 
+---
 
+### 直接提问，让 AI 基于本地知识回答
+![](https://fastly.jsdelivr.net/gh/bucketio/img7@main/2026/04/16/1776322324969-0f13f752-6131-45f2-96e5-7c222afe1ee0.png)
 
-## 当前版本
+---
 
-- 版本号：`v1.4.2026.10104`
-- 发布日期：`2026-04-11`
+### 跨源搜索 or 指定知识源
+![](https://fastly.jsdelivr.net/gh/bucketio/img17@main/2026/04/16/1776322355773-3fec2ef3-b09a-4f11-9eed-17a516251928.png)
 
-## 1. 这是什么
+---
 
-做科研时，真正麻烦的通常不是“找不到文献”，而是文献、笔记、批注和 PDF 长期积累后，真正要用时很难快速想起、翻出并串联起来。  
-`OneFind` 的目标不是把所有资料一股脑塞给大模型，而是让 `Codex` 先在本地知识库中完成检索、筛选和证据定位，再基于这些证据组织回答。
+### 自动索引
+![](https://fastly.jsdelivr.net/gh/bucketio/img4@main/2026/04/16/1776322397884-f1ce8919-e12e-47ca-8615-e984a5774cab.png)
 
-它更像是一套面向科研场景的本地研究检索引擎：
+---
 
-- 先在本地建立索引
-- 再从 `Obsidian`、`Zotero`、`EndNote` 中快速找出最相关证据
-- 最后再交给 `Codex` 做分析、梳理和回答
+### 本地 + 联网结合
+![](https://fastly.jsdelivr.net/gh/bucketio/img15@main/2026/04/16/1776322442958-cffc6d9d-ef03-48bf-80a5-41ffd92e7e87.png)
 
-它解决的核心问题是：
+---
 
-- 文献太多，真正要用时翻不到
-- 笔记太散，过去看过的内容想不起来
-- Zotero、EndNote、Obsidian 分散存放，难以统一调用
-- 在线 AI 上下文有限，不能稳定容纳长期积累的大量本地资料
+## 💡 它解决什么问题？
 
-需要特别说明的是：
+你可能遇到过：
 
-- 本工具不做文献自动下载
-- 更强调用户自己长期阅读、收藏、整理和理解文献
-- AI 负责辅助检索、证据梳理和粗略参考
-- AI 不能替代研究者自己的理解、判断与思考
+- 看过的文献，写的时候想不起来
+- Zotero / EndNote / Obsidian / 本地文件分散
+- 找资料要来回切软件
+- AI 回答不基于你的知识库
 
-## 2. 它适合谁
+👉 OneFind 的目标：
 
-适合：
+**让知识在你需要的那一刻，可以立刻被调出来**
 
-- 博士、硕士、本科毕业论文写作
-- 科研论文撰写
-- 文献综述整理
-- 文献阅读与知识回顾
-- 基金申请书与项目书撰写
-- 已经长期使用 `Zotero`、`Obsidian` 或 `EndNote` 管理资料的研究者
+---
 
-不太适合：
+## ⚡ 快速开始（3步）
 
-- 只偶尔看几篇文献、没有长期资料积累的人
-- 不需要调用本地知识库、只想问通用问题的人
+### 1️⃣ 下载
+👉 https://github.com/iawnfoanaowt/OneFind/releases
 
-## 3. 它能处理什么
+---
 
-从用户视角看，它可以处理你平时真正会反复调用的本地科研知识：
+### 2️⃣ 安装
+- 双击 exe
+- 填写至少 1 个知识库路径
+- 安装 deep 模块
 
-- `Obsidian` 中的研究笔记、专题整理、长期总结
-- `Zotero` 中的题录、摘要、笔记、批注和可提取文本的附件
-- `EndNote` 中的文献条目、摘要、关键词、笔记、附件路径，以及可提取文本的 PDF
-- 这些内容之间跨来源、跨时间的关联线索
+---
 
-从技术层面看，当前稳定支持的证据层包括：
+### 3️⃣ 初始化
 
-- `Obsidian` Markdown 内容分块
-- `Zotero` 条目元数据
-- `Zotero` notes / annotations / fulltext
-- `EndNote` 元数据与附件路径
-- `EndNote` 可提取文本的 PDF 全文切块
+在 Codex 中输入：
 
-## 4. 默认模式与 deep 模式
+```text
+请初始化建立索引，并检测deep模式能否正常调用
+```
 
-### 默认模式
+---
 
-默认模式对应：
+## 🧠 使用方式
 
-- `fast`
+你可以直接这样问：
 
-适合：
+- 帮我总结我本地知识库里关于某个主题的研究
+- 只在 Zotero 里找某个方向的文献
+- 对比我收藏的几篇论文方法差异
 
-- 快速确认有没有相关研究
-- 快速查结论、方法、关键词
-- 做初步整理与日常高频检索
+---
 
-特点：
+## 🧩 支持的数据源
 
-- 更快
-- 更适合日常使用
-- 不安装 `deep` 也可以正常使用
+- Zotero
+- Obsidian
+- Notion
+- Mendeley Reference Manager
+- Citavi7
+- EndNote（需授权）
+- 本地文件（Word / PPT / PDF / Excel）（需授权）
 
-### deep 模式
+  （发送机器码至zhtaogis@163.com，授权个人免费使用）
 
-`deep` 模式适合：
+---
 
-- 精读某篇论文
-- 比较多篇论文的方法、实验和局限
-- 梳理更细的证据链
-- 当默认模式证据不足时继续深挖
+## 🔬 Fast vs Deep 模式
 
-特点：
+| 模式 | 特点 |
+|------|------|
+| Fast | 快速检索，日常使用 |
+| Deep | 深度分析，适合精读论文 |
 
-- 更慢，但更适合重分析任务
-- 需要额外安装依赖和模型
-- 如果电脑有 `NVIDIA GPU`，会优先利用 GPU版本的deep模块，如果只有核显，则默认安装调用CPU版本的deep模块
+依据对话难度，插件能无感自动切换，以获得更高质量的回答
 
-如果安装时不启用 `deep`，不会影响下面这些功能：
+---
 
-- 索引建立
-- 默认检索
-- `Obsidian / Zotero / EndNote` 的日常调用
+## ⚙️ 安装说明（详细版）
 
-只是不能使用更重的深度阅读、语义精排和更深入的分析链路。
+<details>
+<summary>点击展开</summary>
 
-### 如何手动要求使用 deep
 
-在对话里直接说即可，例如：
+开始前，请先确认这 3 件事：
 
-- `请用 deep 模式分析这篇论文`
-- `请开启 deep 模式，对这几篇论文做方法比较`
-- `请使用 deep 模式，基于全文证据回答`
+1. 已准备好可用的 ChatGPT 账号，并安装、登录 Codex
+2. 电脑上至少准备 1 个有效知识库路径
+3. 如需下载 deep 模块，建议C盘预留约 10G 安装空间
 
-## 5. 安装前需要准备什么
+> 提醒：
+> - 本地安装时，建议开梯子；安装速度取决于网络环境
+> - 如果电脑有英伟达显卡，可优先选择 GPU 版 deep 模块；否则默认使用 CPU 版
 
-安装时，至少填写下面三类路径中的一个：
+## 第一步：下载 OneFind 安装包
 
-- `Obsidian` 库文件夹路径
-- `Zotero` 的 `zotero.sqlite`
-- `EndNote` 的 `.enl` 文件路径
+前往 OneFind 的 GitHub Releases 页面下载最新版安装包，双击 exe 开始安装。
 
-三者支持任意组合：
+下载地址：  
+`https://github.com/iawnfoanaowt/OneFind/releases`
 
-- 三选一
-- 三选二
-- 三者全开
+![](https://fastly.jsdelivr.net/gh/bucketio/img3@main/2026/04/16/1776323586281-3a172607-c349-4441-a63b-070d56b0aa6c.png)
 
-只要至少有一个有效路径，就可以安装和使用。
+## 第二步：填写知识库路径
 
-如果安装后又想补充、替换或禁用某个知识库路径，可通过自然语言的命令，来新增、替换、禁用 Obsidian/Zotero/EndNote 路径，修改后刷新索引即可，无需卸载重装。比如：“把 Zotero 路径改成 D:\Zotero\zotero.sqlite，并重建索引。”
+安装时，根据提示填写你的知识库路径。  
+**首次安装时，至少填写 1 个有效路径。**
 
-### 路径填写示例
+当前可直接使用的常见接口包括：
 
-`Obsidian`：
+- Zotero
+- Mendeley
+- Citavi
+- Obsidian
+- Notion
 
-- `C:\Users\用户名\OneDrive\Obsidian`
-- `D:\Notes\ObsidianVault`
+![](https://fastly.jsdelivr.net/gh/bucketio/img12@main/2026/04/16/1776323660475-a4ecec68-06ea-4e03-8b2f-3f70b4a77fa6.png)
 
-`Zotero`：
 
-- `C:\Users\用户名\Zotero\zotero.sqlite`
-- `D:\Zotero\zotero.sqlite`
+对于 **EndNote、文件夹接口，以及 对Office 文档（Word / PPT / Excel）调用分析**，可联系授权获取使用权限。
 
-`EndNote`：
+联系方式：  
+- 邮箱：`zhtaogis@163.com`
+- 公众号：`OneFind`
 
-- `M:\EndNote\My EndNote Library.enl`
-- `M:\EndNote\Project A.enl`
-- `D:\EndNote\Project B.enl`
+## 第三步：如需授权，先导入授权文件
 
-当前安装器支持最多填写 `3` 个 `EndNote` `.enl` 文件。多个 EndNote 库会在默认检索时一起参与；如果只想查其中某一个库，可以在对话中说明“只查某个 EndNote 库”，插件会使用对应的库过滤参数。
+需要授权的同学，可把机器码发送给开发者，获取对应授权文件后再导入。
 
-## 6. 安装后会放到哪里
+![](https://fastly.jsdelivr.net/gh/bucketio/img17@main/2026/04/16/1776323707848-e9bc0a14-9bbc-42a1-ae9b-5dfa576af8e5.png)
 
-安装程序只会把文件放到当前用户的 `.codex` 目录下：
+## 第四步：按需下载 deep 模块
 
-- `C:\Users\你的用户名\.codex\Function\kb_gateway`
-- `C:\Users\你的用户名\.codex\skills\kb-answer`
+建议勾选 deep 模块，这样对话回答质量会更好。
 
-如果 `.codex\Function` 不存在，安装器会自动创建。
+- 有英伟达显卡：可选 GPU 版
+- 无英伟达显卡：使用 CPU 版即可
+- 默认安装路径：`C:\Users\<用户名>\.codex\Function\OneFind`
+- 建议预留空间：约 10G
 
-## 7. 安装程序不会做什么
+![](https://fastly.jsdelivr.net/gh/bucketio/img2@main/2026/04/16/1776323742739-fda61a06-29eb-4226-bd91-5c17af0ac14c.png)
 
-安装程序默认不会做下面这些事：
 
-- 不写 Windows 注册表
-- 不创建桌面快捷方式
-- 不创建开始菜单快捷方式
-- 不修改系统环境变量
-- 不安装系统级 Python
-- 不编辑或修改 `Obsidian` 源资料
-- 不编辑或修改 `Zotero` 数据库或 storage
-- 不编辑、删除或修改 `EndNote` 的 `.enl`、`.Data`、`.eni` 和附件目录
+## 第五步：开始安装
 
-也就是说，安装器只管理它自己的运行目录，不会主动去改你的本地知识库源文件。
+点击开始安装即可。  
+安装耗时通常与网速和网络稳定性有关。
 
-## 8. 首次使用与索引说明
+![](https://fastly.jsdelivr.net/gh/bucketio/img12@main/2026/04/16/1776323775854-714a7b28-5fa0-4360-8724-431517b6704a.png)
 
-首次使用时，程序会先建立本地索引。  
-这一步通常比普通问答稍慢，因为要先把本地资料整理成可检索结构。
+## 第六步：在 Codex 中唤起 OneFind
 
-后续日常使用时，通常直接基于已有索引检索，因此速度会明显更快。
+安装完成后，打开 Codex，使用 `$` 唤起 OneFind 插件，并允许完全权限访问。  
+之后就可以开始对话调用。
 
-如果出现下面情况：
+![](https://fastly.jsdelivr.net/gh/bucketio/img1@main/2026/04/16/1776323803067-83ca2f4a-bc6c-4456-b8ea-6b6f2fd171ea.png)
 
-- `Obsidian` 或 `Zotero` 或 `EndNote` 内容变化较大
-- 很久没有使用这个功能
-- 例如超过约 `7` 天没有更新索引
+## 第七步：首次使用先做初始化
 
-系统会判断索引偏旧，并提示刷新或重建。
+第一次使用前，请先输入下面这句命令：
 
-建议安装完成后，先在 `Codex` 对话中执行：
+```text
+请初始化建立索引，并检测deep模式能否正常调用
+```
 
-`请检测deep模式能否正常调用，并初始化建立索引`
+第一次建立索引会比后续更慢一些。完成后，后面搜索和问答会更快；随着知识库更新，OneFind 也会自动重建索引。
 
-这样可以一次完成：
+如果你想手动触发重建，也可以直接说：
 
-- 检查 `deep` 是否可正常调用
-- 完成首次索引构建
-- 尽早发现当前机器上的环境问题
+```text
+要求OneFind立刻重建索引
+```
 
-## 9. 自动版本与兼容性检查
+![](https://fastly.jsdelivr.net/gh/bucketio/img6@main/2026/04/16/1776323828178-868e62ce-c7ca-43cf-ab85-f2cc9b1be389.png)
 
-程序运行时会自动检查：
+## 第八步：做一次简单验证
 
-- 当前本地版本号
-- 是否与 GitHub 最新公开版本一致
-- `Obsidian / Zotero / EndNote` 当前是否仍可正常适配
+安装完成后，建议马上做一轮简单测试，确认调用内容确实来自你的本地知识库。
 
-如果检测到：
+你可以直接试这些问题：
 
-- 本地版本落后
-- 数据库结构因软件升级发生变化
+- 帮我总结一下我本地知识库里关于 XX 的核心观点
+- 只在 Zotero 里找我收藏过的 XX 文献
+- 只在本地 Word 和 PPT 里找 XX 材料
+- 帮我对比我本地几篇文献对 XX 问题的不同结论
 
-系统会给出“建议更新”的提示，但不会阻断当前继续使用。
+![](https://fastly.jsdelivr.net/gh/bucketio/img15@main/2026/04/16/1776323999578-a3ff74fd-55aa-43bd-beeb-04dc91212105.png)
 
-## 10. 对话安全提醒
+---
 
-建议在 `Codex` 对话中开启完全访问权限。  
-原因不是为了修改数据库，而是因为本功能在运行过程中会连续调用多个本地脚本、索引程序和运行环境；如果不给权限，往往会反复弹授权确认，影响使用流畅度。
+## 补充：更新、卸载与常见问题
 
-这里的“完全访问权限”不代表本工具会去修改数据库。  
-按照当前设计，`Obsidian`、`Zotero` 与 `EndNote` 源资料始终按只读方式访问。
+### 1. 如何更新？
+直接去 GitHub Releases 下载最新版，双击安装即可。  
+**不用重复输入路径，也不用重复授权。**  
+已下载好的 deep 模块也不会重复安装。
 
-## 11. 如何卸载
+![](https://fastly.jsdelivr.net/gh/bucketio/img13@main/2026/04/16/1776324038325-42108cbe-587f-4586-a310-ceedd4b76a91.png)
 
-推荐直接使用安装目录中的卸载程序：
+### 2. 如何卸载？
+默认卸载工具路径：
 
-- `C:\Users\你的用户名\.codex\Function\kb_gateway\OneFindUninstall.exe`
+`C:\Users\<用户名>\.codex\Function\OneFind\OneFindUninstall.exe`
 
-建议操作顺序：
+1.4 版本及以下的卸载工具：
 
-1. 先关闭 `Codex`
-2. 关闭仍在运行的 `OneFind` 相关窗口或服务
-3. 进入 `kb_gateway` 安装目录
-4. 双击运行 `OneFindUninstall.exe`
-5. 按界面提示完成卸载
+`KnowledgeBaseGatewayUninstall.exe`
 
-卸载时只会移除：
+默认只会删除 OneFind 相关文件，不会触碰你的知识库。
 
-- `C:\Users\你的用户名\.codex\Function\kb_gateway`
-- `C:\Users\你的用户名\.codex\skills\kb-answer`
+![](https://fastly.jsdelivr.net/gh/bucketio/img17@main/2026/04/16/1776324067938-ba6280fc-da33-4265-861a-1d6075e0e7b6.png)
 
-不会删除：
 
-- `Obsidian` 笔记库
-- `Zotero` 文献库
-- `EndNote` 文库与附件目录
-- 其他 `Codex` 技能
-- 其他系统文件
+### 3. 如何修改知识库路径？
+可以直接通过自然语言告诉 OneFind：
 
-## 12. 如何更新
+- 新增知识库
+- 编辑路径
+- 移除知识库
+- 禁用某个知识源
 
-推荐更新方式：
+每个知识库各支持一个路径；EndNote 支持同时调用 3 个路径。
 
-1. 先卸载当前版本
-2. 再从 GitHub 下载最新版安装包
-3. 重新安装，并按需要重新检查索引与授权状态
+![](https://fastly.jsdelivr.net/gh/bucketio/img0@main/2026/04/16/1776324102059-41b994c0-623d-4674-9f1f-723098f1ed0a.png)
 
-这种方式最稳，能避免旧版残留文件与新版逻辑混用。
+### 4. 如果安装失败怎么办？
+如果因为网络中断导致安装失败，建议手动删除以下目录后重新安装：
 
-## 13. 如果安装程序被 Windows 阻止
+`C:\Users\<用户名>\.codex\Function\OneFind`
 
-如果出现“智能应用控制已阻止可能不安全的应用”等提示，通常不是安装脚本本身报错，而是 Windows 对未签名安装器做了拦截。
+然后切换网络环境，再重新安装。
 
-可临时通过 `Windows 安全中心` 调整：
+### 5. 如果要重新授权或新增授权？
+除了安装界面可以导入授权，也可以直接运行本地授权程序：
 
-1. 打开 `设置`
-2. 进入 `隐私和安全性`
-3. 打开 `Windows 安全中心`
-4. 进入 `应用和浏览器控制`
-5. 在“智能应用控制”中，将运行模式改为 `评估模式` 或 `关闭`
+`C:\Users\<用户名>\.codex\Function\OneFind\OneFindAuthorization.exe`
 
-安装完成后，如有需要可再切回原来的状态。
+无需重复安装程序。
 
-## 14. EndNote 授权说明
+![](https://fastly.jsdelivr.net/gh/bucketio/img7@main/2026/04/16/1776324133976-811476fc-16fe-4907-8e3b-5c7fc5b8f327.png)
 
-`Obsidian` 和 `Zotero` 默认即可使用；`EndNote` 属于授权控制数据源。
 
-这意味着：
+</details>
 
-- 这里授权的是 `OneFind` 的 `EndNote 数据访问功能`
-- 不是 `EndNote` 软件本身
-- 即使配置了 `.enl` 路径，只要本机没有有效授权 JSON，程序也不会访问 `EndNote`
-- 没有授权、授权过期、机器码不匹配、签名无效或时间回拨异常，都会导致 `EndNote` 被禁用
-- `EndNote` 被禁用时，不影响 `Obsidian` 和 `Zotero`
+---
 
-### 安装时如何授权
+---
 
-安装器界面会提供单独的 `EndNote` 授权区域，包含：
+## 📌 适合人群
 
-- 当前机器码显示
-- 复制机器码
-- 导入授权 JSON
+- 科研人员 / 学生
+- 长期使用 Zotero / Obsidian / EndNote
+- 有大量本地知识积累的人
 
-如果安装时没有导入有效授权：
+---
 
-- 安装仍然可以完成
-- 但 `EndNote` 会保持禁用
-- 后续导入授权后即可恢复可用
+## ⚠️ 注意
 
-### 安装后如何补授权
+- 本工具不替代科研判断
+- 不自动下载文献
+- 更适合长期知识管理者
 
-安装目录中附带独立授权工具：
+---
 
-- `OneFindAuthorization.exe`
+## 📧 联系方式
 
-可用于：
+- 邮箱：zhtaogis@163.com
 
-- 查看当前机器码
-- 导入授权 JSON
-- 查看当前授权状态
+---
 
-如需申请授权，请联系：
+## 📄 License
 
-- `zhtaogis@163.com`
-
-## 版权说明
-
-版权归 `CrazyGIS` 所有，仅限个人学习与科研使用，禁止商用、二次售卖和未授权再分发。  
-联系邮箱：`zhtaogis@163.com`
+仅限个人学习与科研使用，如需商用授权或其他特别授权，请联系版权所有者 CrazyGIS。
+联系邮箱：zhtaogis@163.com
