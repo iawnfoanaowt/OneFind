@@ -1,23 +1,23 @@
 # GitHub Traffic Snapshot
 
 - Repository: iawnfoanaowt/OneFind
-- Snapshot: 2026-05-06T06:56:40Z
+- Snapshot: 2026-05-06T17:54:34Z
 - Archive start date: 2026-05-06
 
 ## Totals
 
 | Metric | Value | Meaning |
 |---|---:|---|
-| Release asset downloads | 313 | All-time cumulative downloads across uploaded release assets |
+| Release asset downloads | 319 | All-time cumulative downloads across uploaded release assets |
 | Archived repository views | 0 | De-duplicated daily page views from archive start date onward |
-| Recent 14-day repository views | 900 | GitHub API rolling traffic window |
-| Recent 14-day unique visitors | 261 | GitHub API rolling traffic window |
+| Recent 14-day repository views | 798 | GitHub API rolling traffic window |
+| Recent 14-day unique visitors | 235 | GitHub API rolling traffic window |
 
 ## Release Asset Downloads
 
 | Release | Published | Asset | Cumulative downloads |
 |---|---|---|---:|
-| v1.6.2026.11705 | 2026-04-26T15:04:28Z | OneFindInstaller_1.6.exe | 77 |
+| v1.6.2026.11705 | 2026-04-26T15:04:28Z | OneFindInstaller_1.6.exe | 83 |
 | v1.5.2026.10704 | 2026-04-16T08:24:20Z | OneFindInstaller_1.5.exe | 107 |
 | v1.5.2026.10609 | 2026-04-16T08:11:49Z | OneFindInstaller_1.5.exe | 2 |
 | v1.4.2026.10104 | 2026-04-11T14:47:23Z | KnowledgeBaseGatewayInstaller.exe | 79 |
