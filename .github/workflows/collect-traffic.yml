@@ -25,7 +25,7 @@ jobs:
 
           if [ -z "${GH_TRAFFIC_TOKEN}" ]; then
             echo "Missing required repository secret: TRAFFIC_PAT"
-            echo "Create a fine-grained PAT for this repository with Administration: Read, then add it as Settings > Secrets and variables > Actions > TRAFFIC_PAT."
+            echo "Create a fine-grained PAT for this repository with Administration: Read and Contents: Read, then add it as Settings > Secrets and variables > Actions > TRAFFIC_PAT."
             exit 1
           fi
 
@@ -34,14 +34,23 @@ jobs:
           snapshot_date_utc="$(date -u +%F)"
           outdir="traffic-history/${snapshot_date_utc}"
           latest_dir="traffic-history/latest"
+          archive_start_file="traffic-history/archive-start-date.txt"
 
           mkdir -p "${outdir}" "${latest_dir}"
+
+          if [ -f "${archive_start_file}" ]; then
+            archive_start_date_utc="$(cat "${archive_start_file}")"
+          else
+            archive_start_date_utc="${snapshot_date_utc}"
+            echo "${archive_start_date_utc}" > "${archive_start_file}"
+          fi
 
           jq -n \
             --arg repo "${REPO}" \
             --arg snapshot_at_utc "${snapshot_at_utc}" \
             --arg snapshot_date_utc "${snapshot_date_utc}" \
-            '{repo: $repo, snapshot_at_utc: $snapshot_at_utc, snapshot_date_utc: $snapshot_date_utc, note: "GitHub traffic views and clones cover only the latest 14 days. Release asset download_count is cumulative."}' \
+            --arg archive_start_date_utc "${archive_start_date_utc}" \
+            '{repo: $repo, snapshot_at_utc: $snapshot_at_utc, snapshot_date_utc: $snapshot_date_utc, archive_start_date_utc: $archive_start_date_utc, note: "GitHub traffic views cover only the latest 14 days from the API. This workflow keeps one de-duplicated daily view history from archive_start_date_utc onward. Release asset download_count is cumulative."}' \
             > "${outdir}/metadata.json"
 
           gh api "repos/${REPO}/traffic/views?per=day" > "${outdir}/views.json"
@@ -53,6 +62,42 @@ jobs:
             | jq -s '[add[] | {tag_name, name, html_url, published_at, assets: [.assets[]? | {name, size, download_count, browser_download_url}] }]' \
             > "${outdir}/releases.json"
 
+          jq \
+            --arg snapshot_at_utc "${snapshot_at_utc}" \
+            '{views: [.views[] | {day_utc: (.timestamp[0:10]), views: .count, unique_visitors: .uniques, last_seen_snapshot_utc: $snapshot_at_utc}]}' \
+            "${outdir}/views.json" > "${outdir}/views-normalized.json"
+
+          jq -r \
+            '["day_utc","views","unique_visitors","last_seen_snapshot_utc"],
+             (.views[] | [.day_utc, (.views | tostring), (.unique_visitors | tostring), .last_seen_snapshot_utc])
+             | @csv' \
+            "${outdir}/views-normalized.json" > "${outdir}/views.csv"
+
+          views_history="traffic-history/views-daily.json"
+          if [ -f "${views_history}" ]; then
+            jq -s \
+              --arg archive_start_date_utc "${archive_start_date_utc}" \
+              '{views: (((.[0].views // []) + (.[1].views // []))
+                | map(select(.day_utc >= $archive_start_date_utc))
+                | sort_by(.day_utc, .last_seen_snapshot_utc)
+                | group_by(.day_utc)
+                | map(.[-1])
+                | sort_by(.day_utc))}' \
+              "${views_history}" "${outdir}/views-normalized.json" > "${views_history}.tmp"
+          else
+            jq \
+              --arg archive_start_date_utc "${archive_start_date_utc}" \
+              '{views: (.views | map(select(.day_utc >= $archive_start_date_utc)) | sort_by(.day_utc))}' \
+              "${outdir}/views-normalized.json" > "${views_history}.tmp"
+          fi
+          mv "${views_history}.tmp" "${views_history}"
+
+          jq -r \
+            '["day_utc","views","unique_visitors","last_seen_snapshot_utc"],
+             (.views[] | [.day_utc, (.views | tostring), (.unique_visitors | tostring), .last_seen_snapshot_utc])
+             | @csv' \
+            "${views_history}" > "traffic-history/views-daily.csv"
+
           jq -r \
             --arg snapshot_date_utc "${snapshot_date_utc}" \
             --arg snapshot_at_utc "${snapshot_at_utc}" \
@@ -61,23 +106,44 @@ jobs:
              | @csv' \
             "${outdir}/releases.json" > "${outdir}/release-downloads.csv"
 
+          total_release_downloads="$(jq '[.[].assets[]?.download_count] | add // 0' "${outdir}/releases.json")"
+          recent_14day_views="$(jq '.count' "${outdir}/views.json")"
+          recent_14day_unique_visitors="$(jq '.uniques' "${outdir}/views.json")"
+          archived_views="$(jq '[.views[].views] | add // 0' "${views_history}")"
+
           {
             echo "# GitHub Traffic Snapshot"
             echo
             echo "- Repository: ${REPO}"
             echo "- Snapshot: ${snapshot_at_utc}"
-            echo "- Traffic views and clones cover only the latest 14 days."
-            echo "- Release asset downloads are cumulative counts."
+            echo "- Archive start date: ${archive_start_date_utc}"
+            echo
+            echo "## Totals"
+            echo
+            echo "| Metric | Value | Meaning |"
+            echo "|---|---:|---|"
+            echo "| Release asset downloads | ${total_release_downloads} | All-time cumulative downloads across uploaded release assets |"
+            echo "| Archived repository views | ${archived_views} | De-duplicated daily page views from archive start date onward |"
+            echo "| Recent 14-day repository views | ${recent_14day_views} | GitHub API rolling traffic window |"
+            echo "| Recent 14-day unique visitors | ${recent_14day_unique_visitors} | GitHub API rolling traffic window |"
             echo
             echo "## Release Asset Downloads"
             echo
             echo "| Release | Published | Asset | Cumulative downloads |"
             echo "|---|---|---|---:|"
             jq -r '.[] as $release | $release.assets[]? | "| \($release.tag_name) | \($release.published_at) | \(.name) | \(.download_count) |"' "${outdir}/releases.json"
+            echo
+            echo "## Archived Daily Views"
+            echo
+            echo "| Day UTC | Views | Unique visitors |"
+            echo "|---|---:|---:|"
+            jq -r '.views[-30:][]? | "| \(.day_utc) | \(.views) | \(.unique_visitors) |"' "${views_history}"
           } > "${outdir}/summary.md"
 
           cp "${outdir}/metadata.json" "${latest_dir}/metadata.json"
           cp "${outdir}/views.json" "${latest_dir}/views.json"
+          cp "${outdir}/views-normalized.json" "${latest_dir}/views-normalized.json"
+          cp "${outdir}/views.csv" "${latest_dir}/views.csv"
           cp "${outdir}/clones.json" "${latest_dir}/clones.json"
           cp "${outdir}/popular-paths.json" "${latest_dir}/popular-paths.json"
           cp "${outdir}/popular-referrers.json" "${latest_dir}/popular-referrers.json"
