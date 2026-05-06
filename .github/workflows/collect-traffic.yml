@@ -1,0 +1,103 @@
+name: Collect GitHub traffic
+
+on:
+  schedule:
+    # GitHub traffic data is UTC-based. This runs at 00:20 Asia/Shanghai.
+    - cron: "20 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Collect traffic and release downloads
+        env:
+          REPO: ${{ github.repository }}
+          GH_TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_PAT }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${GH_TRAFFIC_TOKEN}" ]; then
+            echo "Missing required repository secret: TRAFFIC_PAT"
+            echo "Create a fine-grained PAT for this repository with Administration: Read, then add it as Settings > Secrets and variables > Actions > TRAFFIC_PAT."
+            exit 1
+          fi
+
+          export GH_TOKEN="${GH_TRAFFIC_TOKEN}"
+          snapshot_at_utc="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          snapshot_date_utc="$(date -u +%F)"
+          outdir="traffic-history/${snapshot_date_utc}"
+          latest_dir="traffic-history/latest"
+
+          mkdir -p "${outdir}" "${latest_dir}"
+
+          jq -n \
+            --arg repo "${REPO}" \
+            --arg snapshot_at_utc "${snapshot_at_utc}" \
+            --arg snapshot_date_utc "${snapshot_date_utc}" \
+            '{repo: $repo, snapshot_at_utc: $snapshot_at_utc, snapshot_date_utc: $snapshot_date_utc, note: "GitHub traffic views and clones cover only the latest 14 days. Release asset download_count is cumulative."}' \
+            > "${outdir}/metadata.json"
+
+          gh api "repos/${REPO}/traffic/views?per=day" > "${outdir}/views.json"
+          gh api "repos/${REPO}/traffic/clones?per=day" > "${outdir}/clones.json"
+          gh api "repos/${REPO}/traffic/popular/paths" > "${outdir}/popular-paths.json"
+          gh api "repos/${REPO}/traffic/popular/referrers" > "${outdir}/popular-referrers.json"
+
+          gh api --paginate "repos/${REPO}/releases?per_page=100" \
+            | jq -s '[add[] | {tag_name, name, html_url, published_at, assets: [.assets[]? | {name, size, download_count, browser_download_url}] }]' \
+            > "${outdir}/releases.json"
+
+          jq -r \
+            --arg snapshot_date_utc "${snapshot_date_utc}" \
+            --arg snapshot_at_utc "${snapshot_at_utc}" \
+            '["snapshot_date_utc","snapshot_at_utc","tag_name","published_at","asset_name","download_count","browser_download_url"],
+             (.[] as $release | $release.assets[]? | [$snapshot_date_utc, $snapshot_at_utc, $release.tag_name, $release.published_at, .name, (.download_count | tostring), .browser_download_url])
+             | @csv' \
+            "${outdir}/releases.json" > "${outdir}/release-downloads.csv"
+
+          {
+            echo "# GitHub Traffic Snapshot"
+            echo
+            echo "- Repository: ${REPO}"
+            echo "- Snapshot: ${snapshot_at_utc}"
+            echo "- Traffic views and clones cover only the latest 14 days."
+            echo "- Release asset downloads are cumulative counts."
+            echo
+            echo "## Release Asset Downloads"
+            echo
+            echo "| Release | Published | Asset | Cumulative downloads |"
+            echo "|---|---|---|---:|"
+            jq -r '.[] as $release | $release.assets[]? | "| \($release.tag_name) | \($release.published_at) | \(.name) | \(.download_count) |"' "${outdir}/releases.json"
+          } > "${outdir}/summary.md"
+
+          cp "${outdir}/metadata.json" "${latest_dir}/metadata.json"
+          cp "${outdir}/views.json" "${latest_dir}/views.json"
+          cp "${outdir}/clones.json" "${latest_dir}/clones.json"
+          cp "${outdir}/popular-paths.json" "${latest_dir}/popular-paths.json"
+          cp "${outdir}/popular-referrers.json" "${latest_dir}/popular-referrers.json"
+          cp "${outdir}/releases.json" "${latest_dir}/releases.json"
+          cp "${outdir}/release-downloads.csv" "${latest_dir}/release-downloads.csv"
+          cp "${outdir}/summary.md" "${latest_dir}/summary.md"
+
+          awk 'FNR == 1 && NR != 1 { next } { print }' \
+            traffic-history/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/release-downloads.csv \
+            > traffic-history/release-downloads.csv
+
+      - name: Commit archive
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add traffic-history
+          if git diff --cached --quiet; then
+            echo "No traffic archive changes to commit."
+          else
+            git commit -m "Collect GitHub traffic $(date -u +%F)"
+            git push
+          fi
