@@ -4,19 +4,25 @@
       "day_utc": "2026-05-06",
       "views": 42,
       "unique_visitors": 5,
-      "last_seen_snapshot_utc": "2026-05-09T17:15:22Z"
+      "last_seen_snapshot_utc": "2026-05-10T17:14:58Z"
     },
     {
       "day_utc": "2026-05-07",
       "views": 19,
       "unique_visitors": 13,
-      "last_seen_snapshot_utc": "2026-05-09T17:15:22Z"
+      "last_seen_snapshot_utc": "2026-05-10T17:14:58Z"
     },
     {
       "day_utc": "2026-05-08",
       "views": 32,
       "unique_visitors": 14,
-      "last_seen_snapshot_utc": "2026-05-09T17:15:22Z"
+      "last_seen_snapshot_utc": "2026-05-10T17:14:58Z"
+    },
+    {
+      "day_utc": "2026-05-09",
+      "views": 121,
+      "unique_visitors": 68,
+      "last_seen_snapshot_utc": "2026-05-10T17:14:58Z"
     }
   ]
 }
