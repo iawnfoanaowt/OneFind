@@ -1,4 +1,9 @@
-# OneFind （中文：知寻）
+<p align="right">
+  <a href="./README.md">简体中文</a> | <a href="./README_EN.md">English</a>
+</p>
+
+
+# OneFind（中文：知寻）
 
 > 明明看过，却想不起来？  
 > **OneFind 让你的本地知识随时可用**，帮助用户在毕业论文、科研论文、文献综述、文献阅读以及基金和项目书撰写中，实现一键安装、快速检索与 AI 辅助回答，解决“文献太多、笔记太散、真正要用时却找不到、想不起、串不起来”的常见痛点。
@@ -8,23 +13,69 @@
 
 ## 下载
 
-- 下载地址：[OneFind Releases](https://github.com/iawnfoanaowt/Knowledge-Base-Gateway/releases)
-- 视频介绍：[【文献、资料看过就忘？OneFind 让你的知识随时可调用 （1.5版本大更新）】](https://www.bilibili.com/video/BV1kSdaBeEBt)
-- 公众号：OneFind （内含教程、社群联系方式）
+- 下载地址：[OneFind Releases](https://github.com/iawnfoanaowt/OneFind/releases)
+- 视频介绍：[文献、资料看过就忘？OneFind 让你的知识随时可调用](https://www.bilibili.com/video/BV1kSdaBeEBt)
+- 公众号：**OneFind**（内含教程、社群与最新联系方式）
 
 ![公众号：OneFind](https://github.com/user-attachments/assets/9488ebce-b03e-4c64-ad3b-a9c542b92601)
 
+---
+
 ## 🚀 OneFind 是什么
 
-OneFind 是一个供 ChatGPT Codex 调用的本地知识库插件，让你可以：
+OneFind 是一个供 AI Agent 调用的**本地知识库插件**。它可以把你电脑里的文献、笔记、附件和文件夹资料接入 AI，让 AI 不只是泛泛回答，而是完全基于你的本地资料进行检索、总结和分析。
 
-- 🔍 一个入口搜索：EndNote/Zotero/Obsidian/Notion/Mendeley Reference Manager/Citavi7/文件夹 （七大主流平台）
+你可以用它：
+
+- 🔍 一个入口搜索 Zotero / EndNote / Obsidian / Notion / Mendeley / Citavi / 本地文件夹
 - 💬 用自然语言提问，而不是只搜关键词
-- 📚 基于本地知识库回答（避免 AI 幻觉）
-- ⚡ 自动建立索引，越用越快
-- 🌐 本地不够，还能联网补充
+- 📚 基于本地知识库回答，减少 AI 脱离资料泛泛生成
+- ⚡ 自动建立索引，后续检索更快
+- 🧠 按任务难度在 Balance / Deep 模式间自动切换
+- 🤖 通过 Codex 或 ZCode 调用更多 AI Agent 和模型
+- 🧩 支持 Skill / MCP 双路径调用：可选择 OneFind Skill，也可直接在对话中要求调用 OneFind
 
-👉 本质：**让你的知识，从“存着”变成“随时可用”**
+一句话理解：
+
+> **OneFind 不是替代你的文献管理软件，而是让 AI 能调用你已经积累的知识。**
+
+---
+
+## ✨ 当前支持
+
+### 支持的 AI 平台
+
+- **Codex**：适合已经使用 ChatGPT / Codex 的用户
+- **ZCode**：可接入 Claude Code、Codex、Gemini、OpenCode 等 AI Agent 框架，并可搭配第三方模型 API 使用
+
+两者可以按需选择，也可以同时安装。OneFind 会根据本地环境自动适配。
+
+### 调用方式
+
+Codex 和 ZCode 均支持两种调用方式：
+
+- **Skill 唤起**：在输入框中选择或输入 `OneFind` Skill，再提出检索或分析需求。
+- **直接对话调用**：直接说“请调用 OneFind 检索……”“基于 OneFind 查找……”，AI Agent 会通过 MCP 路径调用 OneFind。
+
+两种方式均可使用 OneFind 功能，能减少因电脑环境差异导致无法检测或调用 OneFind 的问题。
+
+### 支持的系统
+
+- **Windows**
+- **macOS Apple Silicon（M 系列芯片）**
+
+### 支持的数据源
+
+- Zotero
+- Obsidian
+- Notion
+- Mendeley Reference Manager
+- Citavi 7
+- EndNote（需授权）
+- 本地文件夹（需授权）
+- Word / PPT / PDF / Excel / Markdown / CAJ 等文件解析（部分需授权）
+
+> EndNote、本地文件夹、Office 文档和 CAJ 等高级解析能力，可发送机器码至 `zhtaogis@163.com` 获取授权。个人学习与科研使用可申请授权。
 
 ---
 
@@ -60,86 +111,90 @@ OneFind 是一个供 ChatGPT Codex 调用的本地知识库插件，让你可以
 
 ---
 
-## 💡 它解决什么问题？
+## 💡 它解决什么问题
 
 你可能遇到过：
 
-- 看过的文献，写的时候想不起来
-- Zotero / EndNote / Obsidian / 本地文件分散
-- 找资料要来回切软件
-- AI 回答不基于你的知识库
+- 看过很多文献，真正写作时想不起来
+- Zotero / EndNote / Obsidian / 本地文件夹分散在不同地方
+- 找资料要来回切软件、翻文件、搜关键词
+- AI 回答很好看，但不知道来源，不确定是否可信
+- 写综述、论文、基金、项目书时，很难把已有材料快速串起来
 
-👉 OneFind 的目标：
+OneFind 的目标很直接：
 
-**让知识在你需要的那一刻，可以立刻被调出来**
+> **让知识在你需要的那一刻，可以被立刻调出来。**
 
 ---
 
-## ⚡ 快速开始（3步）
+## ⚡ 快速开始（3 步）
 
 ### 1️⃣ 下载
 
-👉 https://github.com/iawnfoanaowt/OneFind/releases
+前往 Releases 下载对应系统的最新版安装包：
 
----
+```text
+https://github.com/iawnfoanaowt/OneFind/releases
+```
 
 ### 2️⃣ 安装
 
-- 双击 exe
-- 填写至少 1 个知识库路径
-- 安装 deep 模块
+安装前建议先准备好：
 
----
+- Codex 或 ZCode，至少安装一个
+- 至少 1 个有效知识库路径，例如 Zotero、Obsidian、Notion 或本地文件夹
+- 如需 Deep 模式，预留一定磁盘空间
+
+安装时可以：
+
+- 自定义 OneFind 安装位置，不限定于 C 盘
+- 填写知识库路径
+- 按需安装 deep 模块
+- 按需导入授权文件
 
 ### 3️⃣ 初始化
 
-在 Codex 中输入：
+在 Codex 或 ZCode 中，可以通过 OneFind Skill 唤起，也可以直接对话调用 OneFind，然后输入：
 
 ```text
-请初始化建立索引，并检测deep模式能否正常调用
+请调用 OneFind 初始化索引，并检测 deep 模式能否正常调用
 ```
+
+首次索引耗时取决于资料数量和电脑性能。索引完成后，就可以直接提问。
 
 ---
 
 ## 🧠 使用方式
 
-在 Codex 中用“$”唤起 OneFind
-你可以直接这样问：
+在 Codex 或 ZCode 中，OneFind 有两种常用调用方式：
 
-- 帮我总结我本地知识库里关于某个主题的研究
-- 只在 Zotero 里找某个方向的文献
-- 对比我收藏的几篇论文方法差异
+1. **Skill 唤起**：选择或输入 `OneFind` Skill 后提问；
+2. **直接对话调用**：在问题中写明“请调用 OneFind”或“基于 OneFind 检索”。
 
----
+例如：
 
-## 🧩 支持的数据源
+```text
+请调用 OneFind，总结我本地知识库里关于水资源匮乏的研究进展
+```
 
-- Zotero
+你也可以这样问：
 
-- Obsidian
-
-- Notion
-
-- Mendeley Reference Manager
-
-- Citavi7
-
-- EndNote（需授权）
-
-- 本地文件（Word / PPT / PDF / Excel / Caj）（需授权）
-
-  （发送机器码至zhtaogis@163.com，授权个人免费使用）
+- 只在 Zotero 中查找某个方向的文献
+- 在 EndNote 和本地 PDF 中对比某几篇论文的方法差异
+- 从我的项目材料里提取与监测预警有关的内容
+- 基于本地文献整理一个综述框架
+- 查找哪些论文提到了某个模型的局限性
 
 ---
 
-## 🔬 Fast vs Deep 模式
+## 🔬 Balance vs Deep 模式
 
-| 模式 | 特点                   |
-| ---- | ---------------------- |
-| Fast | 快速检索，日常使用     |
-| Deep | 深度分析，适合精读论文 |
+| 模式    | 适用场景                             |
+| ------- | ------------------------------------ |
+| Balance | 快速检索、日常查找、简单问答         |
+| Deep    | 深度分析、正文证据检索、复杂文献问题 |
 
-依据对话难度，插件能无感自动切换，以获得更高质量的回答
+OneFind 会根据问题难度自动选择合适模式，也可以按需指定。
 
 ---
 
@@ -149,201 +204,163 @@ OneFind 是一个供 ChatGPT Codex 调用的本地知识库插件，让你可以
 <summary>点击展开</summary>
 
 
+### 安装前准备
 
-开始前，请先确认这 3 件事：
+1. 安装 Codex 或 ZCode，二者至少选择一个。  
+2. 准备至少 1 个有效知识库路径。  
+3. 如需使用 EndNote、本地文件夹、Office 文档或 CAJ 解析，请提前准备授权。  
+4. 如需 Deep 模式，请预留一定磁盘空间。  
 
-1. 已准备好可用的 ChatGPT 账号，并安装、登录 Codex
-2. 电脑上至少准备 1 个有效知识库路径
-3. 如需下载 deep 模块，建议C盘预留约 10G 安装空间
-
-> 提醒：
->
-> - 本地安装时，建议开梯子；安装速度取决于网络环境
-> - 如果电脑有英伟达显卡，可优先选择 GPU 版 deep 模块；否则默认使用 CPU 版
-
-## 第一步：下载 OneFind 安装包
-
-前往 OneFind 的 GitHub Releases 页面下载最新版安装包，双击 exe 开始安装。
-
-下载地址：  
-`https://github.com/iawnfoanaowt/OneFind/releases`
-
-![](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260426163129392.png)
-
-## 第二步：填写知识库路径
-
-安装时，根据提示填写你的知识库路径。  
-**首次安装时，至少填写 1 个有效路径。**
-
-当前可直接使用的常见接口包括：
-
-- Zotero
-- Mendeley
-- Citavi
-- Obsidian
-- Notion
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img12@main/2026/04/16/1776323660475-a4ecec68-06ea-4e03-8b2f-3f70b4a77fa6.png)
-
-
-对于 **EndNote、文件夹接口，以及 对Office 文档（Word / PPT / Excel）、Caj 调用分析**，可联系授权获取使用权限。
-
-联系方式：  
-
-- 邮箱：`zhtaogis@163.com`
-- 公众号：`OneFind`
-
-## 第三步：如需授权，先导入授权文件
-
-需要授权的同学，可把机器码发送给开发者，获取对应授权文件后再导入。
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img17@main/2026/04/16/1776323707848-e9bc0a14-9bbc-42a1-ae9b-5dfa576af8e5.png)
-
-## 第四步：按需下载 deep 模块
-
-建议勾选 deep 模块，这样对话回答质量会更好。
-
-- 有英伟达显卡：可选 GPU 版
-- 无英伟达显卡：使用 CPU 版即可
-- 默认安装路径：`C:\Users\<用户名>\.codex\Function\OneFind`
-- 建议预留空间：约 10G
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img2@main/2026/04/16/1776323742739-fda61a06-29eb-4226-bd91-5c17af0ac14c.png)
-
-
-## 第五步：开始安装
-
-点击开始安装即可。  
-安装耗时通常与网速和网络稳定性有关。
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img12@main/2026/04/16/1776323775854-714a7b28-5fa0-4360-8724-431517b6704a.png)
-
-## 第六步：在 Codex 中唤起 OneFind
-
-安装完成后，打开 Codex，使用 `$` 唤起 OneFind 插件，并允许完全权限访问。  
-之后就可以开始对话调用。
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img1@main/2026/04/16/1776323803067-83ca2f4a-bc6c-4456-b8ea-6b6f2fd171ea.png)
-
-## 第七步：首次使用先做初始化
-
-第一次使用前，请先输入下面这句命令：
-
-```text
-请初始化建立索引，并检测deep模式能否正常调用
-```
-
-第一次建立索引会比后续更慢一些。完成后，后面搜索和问答会更快；随着知识库更新，OneFind 也会自动重建索引。
-
-如果你想手动触发重建，也可以直接说：
-
-```text
-要求OneFind立刻重建索引
-```
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img6@main/2026/04/16/1776323828178-868e62ce-c7ca-43cf-ab85-f2cc9b1be389.png)
-
-## 第八步：做一次简单验证
-
-安装完成后，建议马上做一轮简单测试，确认调用内容确实来自你的本地知识库。
-
-你可以直接试这些问题：
-
-- 帮我总结一下我本地知识库里关于 XX 的核心观点
-- 只在 Zotero 里找我收藏过的 XX 文献
-- 只在本地 Word 和 PPT 里找 XX 材料
-- 帮我对比我本地几篇文献对 XX 问题的不同结论
-
-![](https://fastly.jsdelivr.net/gh/bucketio/img15@main/2026/04/16/1776323999578-a3ff74fd-55aa-43bd-beeb-04dc91212105.png)
+> ZCode 本身是 AI Agent 集成平台，不直接提供模型。使用第三方模型时，需要自行配置模型 API，或登录已有的 Claude Code、Codex、Gemini 等账号。
 
 ---
 
-## 补充：更新、卸载与常见问题
+### Windows 安装
 
-### 1. 如何更新？
+1. 从 [OneFind Releases](https://github.com/iawnfoanaowt/OneFind/releases) 下载 Windows 安装包。
+2. 双击安装器。
+3. 选择 OneFind 安装位置。
+4. 填写知识库路径。
+5. 按需安装 deep 模块和导入授权文件。
+6. 打开 Codex 或 ZCode，通过 OneFind Skill 或直接对话调用 OneFind。
 
-1.5版本及以上支持增量更新，直接去 GitHub Releases 下载最新版，双击安装即可。  
-**不用重复输入路径，也不用重复授权。**  
-已下载好的 deep 模块也不会重复安装。
+![](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260511100844657.png)
 
-1.4版本及以下，需要卸载后重新安装来更新。
+---
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img13@main/2026/04/16/1776324038325-42108cbe-587f-4586-a310-ceedd4b76a91.png)
+### macOS 安装
 
-### 2. 如何卸载？
+当前主要支持 **Apple Silicon（M 系列芯片）** 设备。
 
-默认卸载工具路径：
+1. 先安装 Codex 或 ZCode。
+2. 安装 OneFind macOS 版本。
+3. 设置 Zotero、Obsidian、Notion 或本地文件夹等知识库路径。
+4. 按需完成授权。
+5. 开启必要的本地文件访问权限。
+6. 通过 OneFind Skill 或直接对话调用 OneFind，并初始化索引。
 
-`C:\Users\<用户名>\.codex\Function\OneFind\OneFindUninstall.exe`
+![](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260511174720228.png)
 
-1.4 版本及以下的卸载工具：
+首次使用建议输入：
 
-`KnowledgeBaseGatewayUninstall.exe`
+```text
+请初始化索引，并检测 deep 模式是否可用
+```
 
-默认只会删除 OneFind 相关文件，不会触碰你的知识库。
+![](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260511182059902.png)
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img17@main/2026/04/16/1776324067938-ba6280fc-da33-4265-861a-1d6075e0e7b6.png)
+---
 
+### ZCode 使用说明
 
-### 3. 如何修改知识库路径？
+ZCode 可用于调用更多 AI Agent 和第三方模型。
 
-可以直接通过自然语言告诉 OneFind：
+常见方式包括：
 
-- 新增知识库
-- 编辑路径
-- 移除知识库
-- 禁用某个知识源
+- 直接登录已有的 Claude Code / Codex / Gemini 等账号
+- 配置第三方模型 API，例如 DeepSeek、Qwen 等
+- 在 ZCode 中选择不同模型，再调用 OneFind 检索本地知识库
 
-每个知识库各支持一个路径；EndNote 支持同时调用 3 个路径。
+![](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260511110818531.png)
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img0@main/2026/04/16/1776324102059-41b994c0-623d-4674-9f1f-723098f1ed0a.png)
+### Skill / MCP 调用说明
 
-### 4. 如果安装失败怎么办？
+Codex 与 ZCode 均支持 Skill 和 MCP 双路径调用 OneFind：
 
-如果因为网络中断导致安装失败，建议手动删除以下目录后重新安装：
+- 选择或输入 `OneFind` Skill 后提问，适合希望明确指定工具的场景；
+- 直接在对话中说“请调用 OneFind 检索……”或“基于 OneFind 查找……”，适合日常自然语言使用。
 
-`C:\Users\<用户名>\.codex\Function\OneFind`
+两种方式功能一致。双路径设计主要用于提升兼容性，减少因不同电脑环境、平台检测方式或 Skill 识别不稳定导致无法调用 OneFind 的问题。
 
-然后切换网络环境，再重新安装。
+![image-20260512212949130](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260512212949222.png)
 
-[一些已知问题的解决方案](https://github.com/iawnfoanaowt/OneFind/issues/2)
+![image-20260512212957559](https://paperead-zt.oss-cn-beijing.aliyuncs.com/img/20260512212957632.png)
 
-### 5. 如果要重新授权或新增授权？
+更详细的 AI Agent 选择与安装说明，可参考：
 
-除了安装界面可以导入授权，也可以直接运行本地授权程序：
+[AI Agent 选择与安装指南](https://mp.weixin.qq.com/s/M_8_JRf6MmcWQwPw4Nj8PQ)
 
-`C:\Users\<用户名>\.codex\Function\OneFind\OneFindAuthorization.exe`
+---
 
-无需重复安装程序。
+### 授权说明
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img7@main/2026/04/16/1776324133976-811476fc-16fe-4907-8e3b-5c7fc5b8f327.png)
+默认可访问常见知识库，如 Zotero、Obsidian、Notion 等。
 
+如需启用以下能力，可发送机器码至 `zhtaogis@163.com`：
+
+- EndNote 调用
+- 本地文件夹资料解析
+- Word / PPT / Excel 文件解析
+- CAJ 文件解析
+
+---
+
+### 更新与卸载
+
+**更新：**
+
+1.5 及以上版本可以直接覆盖安装，无需重复填写路径或重新授权。
+
+**卸载：**
+
+OneFind 不会删除你的原始知识库文件。需要卸载时，请使用安装目录中的卸载工具；macOS 端可使用：
+
+```text
+/Users/用户名/Library/Application Support/OneFind/OneFind 卸载工具.app
+```
+
+**修改知识库路径：**
+
+可以直接通过对话让 OneFind 修改，例如：
+
+```text
+请帮我把 Obsidian 知识库路径改为 XXX
+```
+
+---
+
+### 常见问题
+
+**Q：安装失败怎么办？**  
+A：通常与网络中断、权限或旧版本残留有关。可切换网络后重试，或删除旧安装目录后重新安装。
+
+**Q：ZCode 是否必须使用？**  
+A：不是。已有 Codex 的用户可以继续使用 Codex；希望调用更多模型的用户可以使用 ZCode。
+
+**Q：Mac Intel 芯片能用吗？**  
+A：当前 macOS 端主要支持 Apple Silicon（M 系列芯片），过老的 Mac 电脑，会影响检索的性能。
+
+**Q：OneFind 会修改我的原始文献吗？**  
+A：不会。OneFind 对本地只读访问和索引构建，不会替代或破坏原有知识库。
 
 </details>
-
----
 
 ---
 
 ## 📌 适合人群
 
 - 科研人员 / 学生
-- 长期使用 Zotero / Obsidian / EndNote 等知识库软件
-- 有大量本地知识积累的人
+- 写论文、综述、基金和项目书的用户
+- 长期使用 Zotero / Obsidian / EndNote 等知识库软件的人
+- 有大量 PDF、Word、PPT、Excel、CAJ 或项目材料的人
+- 希望 AI 基于自己资料回答，而不是只靠通用知识生成的人
 
 ---
 
 ## ⚠️ 注意
 
-- 本工具不替代科研判断
-- 不自动下载文献
-- 更适合长期知识管理者
-
----
+- OneFind 不替代科研判断
+- OneFind 不自动下载文献
+- OneFind 更适合长期知识管理者
+- 第三方模型 API、Codex、Claude Code、Gemini 等服务需按各平台规则自行配置或订阅
 
 ---
 
 ## 📄 License
 
-仅限个人学习与科研使用，如需商用授权或其他特别授权，请联系版权所有者 CrazyGIS。
-联系邮箱：zhtaogis@163.com
+仅限个人学习与科研使用。  
+如需商用授权或其他特别授权，请联系版权所有者 CrazyGIS。
+
+联系邮箱：`zhtaogis@163.com`
+
+公众号：OneFind
