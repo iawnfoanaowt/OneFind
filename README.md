@@ -333,6 +333,14 @@ A：当前 macOS 端主要支持 Apple Silicon（M 系列芯片），过老的 M
 **Q：OneFind 会修改我的原始文献吗？**  
 A：不会。OneFind 对本地只读访问和索引构建，不会替代或破坏原有知识库。
 
+**Q：Mac安装报错，可以看下面的教程**
+<img width="1732" height="910" alt="image" src="https://github.com/user-attachments/assets/c9ca04ad-f712-40d7-a374-072e0e6f8aa1" />
+<img width="997" height="769" alt="image" src="https://github.com/user-attachments/assets/d4c46d6b-95a6-4885-806b-7cda3cd4bdad" />
+sudo spctl --master-disable
+<img width="986" height="767" alt="image" src="https://github.com/user-attachments/assets/9c217e1c-ed1e-4be2-b93c-2ebaf0ff07b3" />
+<img width="997" height="224" alt="image" src="https://github.com/user-attachments/assets/718595a0-a333-4582-b7bf-c4ee18733e21" />
+<img width="1038" height="837" alt="image" src="https://github.com/user-attachments/assets/afc853e2-1414-4e99-b3f7-4cf2b9990138" />
+
 </details>
 
 ---
