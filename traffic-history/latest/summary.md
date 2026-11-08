@@ -1,7 +1,7 @@
 # GitHub Traffic Snapshot
 
 - Repository: iawnfoanaowt/OneFind
-- Snapshot: 2026-11-07T20:16:41Z
+- Snapshot: 2026-11-08T20:31:57Z
 - Archive start date: 2026-05-06
 
 ## Totals
@@ -9,9 +9,9 @@
 | Metric | Value | Meaning |
 |---|---:|---|
 | Release asset downloads | 1601 | All-time cumulative downloads across uploaded release assets |
-| Archived repository views | 3402 | De-duplicated daily page views from archive start date onward |
-| Recent 14-day repository views | 68 | GitHub API rolling traffic window |
-| Recent 14-day unique visitors | 37 | GitHub API rolling traffic window |
+| Archived repository views | 3410 | De-duplicated daily page views from archive start date onward |
+| Recent 14-day repository views | 74 | GitHub API rolling traffic window |
+| Recent 14-day unique visitors | 38 | GitHub API rolling traffic window |
 
 ## Release Asset Downloads
 
@@ -32,7 +32,6 @@
 
 | Day UTC | Views | Unique visitors |
 |---|---:|---:|
-| 2026-10-08 | 3 | 3 |
 | 2026-10-09 | 1 | 1 |
 | 2026-10-10 | 10 | 6 |
 | 2026-10-11 | 5 | 4 |
@@ -62,3 +61,4 @@
 | 2026-11-04 | 1 | 1 |
 | 2026-11-05 | 3 | 3 |
 | 2026-11-06 | 9 | 2 |
+| 2026-11-07 | 8 | 3 |
