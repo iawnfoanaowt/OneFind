@@ -1,24 +1,24 @@
 # GitHub Traffic Snapshot
 
 - Repository: iawnfoanaowt/OneFind
-- Snapshot: 2026-11-18T22:57:30Z
+- Snapshot: 2026-11-19T23:04:54Z
 - Archive start date: 2026-05-06
 
 ## Totals
 
 | Metric | Value | Meaning |
 |---|---:|---|
-| Release asset downloads | 1612 | All-time cumulative downloads across uploaded release assets |
-| Archived repository views | 3446 | De-duplicated daily page views from archive start date onward |
-| Recent 14-day repository views | 57 | GitHub API rolling traffic window |
-| Recent 14-day unique visitors | 26 | GitHub API rolling traffic window |
+| Release asset downloads | 1617 | All-time cumulative downloads across uploaded release assets |
+| Archived repository views | 3449 | De-duplicated daily page views from archive start date onward |
+| Recent 14-day repository views | 59 | GitHub API rolling traffic window |
+| Recent 14-day unique visitors | 27 | GitHub API rolling traffic window |
 
 ## Release Asset Downloads
 
 | Release | Published | Asset | Cumulative downloads |
 |---|---|---|---:|
 | v1.8.2026.22201 | 2026-08-11T11:28:45Z | OneFind-macos-arm64-v1.8.dmg | 33 |
-| v1.8.2026.22201 | 2026-08-11T11:28:45Z | OneFindInstaller_1.8.exe | 302 |
+| v1.8.2026.22201 | 2026-08-11T11:28:45Z | OneFindInstaller_1.8.exe | 307 |
 | v1.7.2026.13301 | 2026-05-12T13:33:59Z | OneFind-macos-arm64-v1.7.dmg | 134 |
 | v1.7.2026.13301 | 2026-05-12T13:33:59Z | OneFindInstaller-windows_1.7.exe | 718 |
 | v1.6.2026.11705 | 2026-04-26T15:04:28Z | OneFindInstaller_1.6.exe | 176 |
@@ -32,7 +32,6 @@
 
 | Day UTC | Views | Unique visitors |
 |---|---:|---:|
-| 2026-10-19 | 6 | 4 |
 | 2026-10-20 | 3 | 3 |
 | 2026-10-21 | 5 | 2 |
 | 2026-10-22 | 0 | 0 |
@@ -62,3 +61,4 @@
 | 2026-11-15 | 2 | 2 |
 | 2026-11-16 | 4 | 4 |
 | 2026-11-17 | 5 | 2 |
+| 2026-11-18 | 3 | 3 |
