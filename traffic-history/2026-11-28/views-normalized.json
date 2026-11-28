@@ -1,0 +1,88 @@
+{
+  "views": [
+    {
+      "day_utc": "2026-11-13",
+      "views": 3,
+      "unique_visitors": 1,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-14",
+      "views": 8,
+      "unique_visitors": 3,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-15",
+      "views": 2,
+      "unique_visitors": 2,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-16",
+      "views": 4,
+      "unique_visitors": 4,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-17",
+      "views": 5,
+      "unique_visitors": 2,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-18",
+      "views": 3,
+      "unique_visitors": 3,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-19",
+      "views": 2,
+      "unique_visitors": 2,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-20",
+      "views": 4,
+      "unique_visitors": 2,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-21",
+      "views": 0,
+      "unique_visitors": 0,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-22",
+      "views": 3,
+      "unique_visitors": 2,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-23",
+      "views": 0,
+      "unique_visitors": 0,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-24",
+      "views": 2,
+      "unique_visitors": 2,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-25",
+      "views": 0,
+      "unique_visitors": 0,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    },
+    {
+      "day_utc": "2026-11-26",
+      "views": 4,
+      "unique_visitors": 4,
+      "last_seen_snapshot_utc": "2026-11-28T00:05:07Z"
+    }
+  ]
+}
